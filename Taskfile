@@ -94,6 +94,11 @@ function task:shell { ## Open a shell in the running app container
 	dockercompose exec app bash
 }
 
+function task:psql { ## Open a psql shell in the database
+	docker:assert-running
+	dockercompose exec db psql -U lorecrafter lorecrafter
+}
+
 # =========================================================
 ## Docker
 # =========================================================

@@ -15,6 +15,23 @@ services:
     environment:
       COREPACK_ENABLE_DOWNLOAD_PROMPT: "0"
 
+  db:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: lorecrafter
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: lorecrafter
+    volumes:
+      - postgres-data:/var/lib/postgresql
+    ports:
+      - "127.0.0.1:5432:5432"
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "lorecrafter", "-d", "lorecrafter"]
+      interval: 1m30s
+      timeout: 30s
+      retries: 5
+
 volumes:
   pnpm-store:
   node-cache:
+  postgres-data:
