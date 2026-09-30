@@ -1,0 +1,20 @@
+name: lorecrafter
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: pnpm dev --hostname 0.0.0.0
+    volumes:
+      - .:/app
+      - pnpm-store:/home/node/.local/share/pnpm
+      - node-cache:/home/node/.cache
+    ports:
+      - "127.0.0.1:3000:3000"
+    environment:
+      COREPACK_ENABLE_DOWNLOAD_PROMPT: "0"
+
+volumes:
+  pnpm-store:
+  node-cache:

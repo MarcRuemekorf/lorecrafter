@@ -1,0 +1,11 @@
+FROM node:26-slim
+
+# Node 25+ no longer bundles Corepack, so install it, then create the pnpm launcher.
+RUN npm install -g corepack && corepack enable pnpm
+
+# Create the folders our cache volumes will mount on, owned by the node user
+RUN mkdir -p /home/node/.cache /home/node/.local/share/pnpm \
+ && chown -R node:node /home/node
+
+USER node
+WORKDIR /app
