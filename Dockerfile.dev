@@ -4,8 +4,8 @@ FROM node:26-slim
 RUN npm install -g corepack && corepack enable pnpm
 
 # Create the folders our cache volumes will mount on, owned by the node user
-RUN mkdir -p /home/node/.cache /home/node/.local/share/pnpm \
- && chown -R node:node /home/node
+RUN mkdir -p /home/node/.cache /home/node/.local/share/pnpm /app/node_modules \
+ && chown -R node:node /home/node /app
 
 USER node
 WORKDIR /app

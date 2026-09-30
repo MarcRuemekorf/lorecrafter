@@ -8,6 +8,7 @@ services:
     command: pnpm dev --hostname 0.0.0.0
     volumes:
       - .:/app
+      - node-modules:/app/node_modules
       - pnpm-store:/home/node/.local/share/pnpm
       - node-cache:/home/node/.cache
     ports:
@@ -16,5 +17,6 @@ services:
       COREPACK_ENABLE_DOWNLOAD_PROMPT: "0"
 
 volumes:
+  node-modules:
   pnpm-store:
   node-cache:
