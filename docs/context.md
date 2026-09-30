@@ -71,8 +71,8 @@ M0 Foundation · M1 Core loop · M2 Memory · M3 Privacy · M4 Illustrations · 
 | # | Step | Status |
 |---|---|---|
 | 1 | Machine setup: Docker, Git, SSH key for GitHub, noreply email | Done |
-| 2 | Create the Next.js project, private GitHub repo, dev container (Dockerfile.dev + compose) | In progress |
-| 3 | Guardrails: strict TypeScript, Biome | |
+| 2 | Create the Next.js project, private GitHub repo, dev container (Dockerfile.dev + compose) | Done |
+| 3 | Guardrails: strict TypeScript, Biome | In progress |
 | 4 | Local Postgres as a second compose service | |
 | 5 | Drizzle schema and migrations | |
 | 6 | Validated environment config (zod) | |

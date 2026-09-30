@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Home() {
   const renderedAt = new Date().toISOString();
   console.log("Rendering Home at", renderedAt);

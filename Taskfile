@@ -79,6 +79,11 @@ function task:format { ## Format code with Biome
 	dockercompose run --rm app pnpm format
 }
 
+function task:typecheck { ## Check types with TypeScript
+	title "Type checking"
+	dockercompose run --rm app pnpm typecheck
+}
+
 function task:pnpm { ## Run pnpm command <command> in the app container
 	title "pnpm $@"
 	dockercompose run --rm app pnpm "$@"
